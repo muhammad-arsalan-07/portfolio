@@ -21,7 +21,7 @@ export default function Skills() {
         Skills
       </h2>
       <span className="section_subtitle" data-aos="zoom-in">
-        My techinal level
+        My technical level
       </span>
 
       <div className="skills_container container grid">

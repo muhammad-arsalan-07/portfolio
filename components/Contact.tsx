@@ -53,7 +53,7 @@ export default function Contact() {
               <a
                 href="mailto:muhammadarsalan7531@gmail.com"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="contact_button"
               >
                 Write me
@@ -72,7 +72,7 @@ export default function Contact() {
               <a
                 href="https://api.whatsapp.com/send?phone=923481246429"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="contact_button"
               >
                 Write me
@@ -91,7 +91,7 @@ export default function Contact() {
               <a
                 href="https://m.me/arsalan.tanoli.712"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="contact_button"
               >
                 Write me

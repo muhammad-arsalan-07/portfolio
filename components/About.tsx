@@ -48,13 +48,13 @@ export default function About() {
               data-aos-delay="500"
             >
               <i className="uil uil-graduation-cap about_icon"></i>
-              <h3 className="about_title">Qulafication</h3>
+              <h3 className="about_title">Qualification</h3>
               <span className="about_subtitle">Bachelors</span>
             </div>
           </div>
 
           <p className="about_description" data-aos="fade-up">
-            Frontend developer, I create web pages with UI / UX user interface, I have years of experience and many clients are happy with the projects carried out.
+            I am Muhammad Arsalan, web developer from Pakistan and currently studying in Virtual University. I have experience as full-stack developer and ability to work independently and as part of a team, and comfortable with agile development methods.
           </p>
 
           <a
@@ -62,7 +62,7 @@ export default function About() {
             href="/assets/John-Cv.pdf"
             className="button button_flex"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             data-aos="flip-left"
           >
             Download CV

@@ -16,6 +16,7 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
+    let pauseTimer: NodeJS.Timeout;
     const currentRole = typewriterRoles[roleIndex];
     const typingSpeed = isDeleting ? 60 : 120;
 
@@ -23,7 +24,7 @@ export default function Hero() {
       if (!isDeleting) {
         setText(currentRole.substring(0, text.length + 1));
         if (text.length + 1 === currentRole.length) {
-          setTimeout(() => setIsDeleting(true), 1500);
+          pauseTimer = setTimeout(() => setIsDeleting(true), 1500);
         }
       } else {
         setText(currentRole.substring(0, text.length - 1));
@@ -34,7 +35,10 @@ export default function Hero() {
       }
     }, typingSpeed);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (pauseTimer) clearTimeout(pauseTimer);
+    };
   }, [text, isDeleting, roleIndex]);
 
   return (
@@ -44,10 +48,11 @@ export default function Hero() {
           {/* Socials */}
           <div className="home_social" data-aos="fade-right">
             <a
-              href="https://github.com"
+              href="https://github.com/muhammad-arsalan-07"
               className="home_social_icon"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
             >
               <i className="uil uil-github-alt"></i>
             </a>
@@ -55,7 +60,8 @@ export default function Hero() {
               href="https://dribbble.com"
               className="home_social_icon"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Dribbble Profile"
             >
               <i className="uil uil-dribbble"></i>
             </a>
@@ -63,7 +69,8 @@ export default function Hero() {
               href="https://linkedin.com"
               className="home_social_icon"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
             >
               <i className="uil uil-linkedin-alt"></i>
             </a>
@@ -80,7 +87,10 @@ export default function Hero() {
                 <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
               </mask>
               <g mask="url(#mask0)">
-                <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                <path
+                  d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
+                  fill="#000000"
+                />
                 <image
                   className="home_profile_image"
                   x="12"
@@ -96,19 +106,8 @@ export default function Hero() {
           {/* Home Data */}
           <div className="home_data">
             <h1 className="home_title" data-aos="zoom-in-right">
-              Hello I'am{' '}
-              <span className="home_hand" data-aos="zoom-in-right">
-                <svg
-                  className="wavingIcon"
-                  width="36"
-                  height="36"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path fill="none" d="M0 0h24v24H0z" />
-                  <path d="M23 17c0 3.31-2.69 6-6 6v-1.5c2.48 0 4.5-2.02 4.5-4.5H23zM1 7c0-3.31 2.69-6 6-6v1.5C4.52 2.5 2.5 4.52 2.5 7H1zm7.01-2.68l-4.6 4.6c-3.22 3.22-3.22 8.45 0 11.67s8.45 3.22 11.67 0l7.07-7.07c.49-.49.49-1.28 0-1.77a1.25 1.25 0 00-1.77 0l-4.42 4.42-.71-.71 6.54-6.54c.49-.49.49-1.28 0-1.77s-1.28-.49-1.77 0l-5.83 5.83-.71-.71 6.89-6.89c.49-.49.49-1.28 0-1.77s-1.28-.49-1.77 0l-6.89 6.89-.69-.7 5.48-5.48c.49-.49.49-1.28 0-1.77s-1.28-.49-1.77 0l-7.62 7.62a4.003 4.003 0 01-.33 5.28l-.71-.71a3 3 0 000-4.24l-.35-.35 4.07-4.07c.49-.49.49-1.28 0-1.77a1.27 1.27 0 00-1.78.01z" />
-                </svg>
+              <span className="home_intro_text">
+                <span className="home_hand">👋</span> Hello I&apos;am
               </span>
               <br />
               Muhammad Arsalan
@@ -118,16 +117,18 @@ export default function Hero() {
               <span className="animate-pulse">|</span>
             </h3>
             <p className="home_description" data-aos="zoom-in">
-              I'm creative web developer based in Karachi, and I'm very passionate and dedicated to my work.
+              Full-stack developer with experience in developing and managing web applications. Strong knowledge of React, Node Js, and Express Js. Experienced in creating unit and end-to-end tests.
             </p>
 
             <a
-              href="#contact"
+              href="https://github.com/muhammad-arsalan-07"
+              target="_blank"
+              rel="noopener noreferrer"
               className="button button_flex"
               data-aos="flip-left"
             >
-              Say Hello
-              <i className="uil uil-message button_icon"></i>
+              Github Account
+              <i className="uil uil-github-alt button_icon"></i>
             </a>
           </div>
         </div>

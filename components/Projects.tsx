@@ -1,26 +1,32 @@
-import Image from 'next/image';
+import ProjectCard, { ProjectItem } from './ProjectCard';
 
 export default function Projects() {
-  const projectsList = [
+  const projectsList: ProjectItem[] = [
     {
       title: 'Covid Tracker App',
       image: '/assets/covid.png',
-      demoUrl: 'https://github.com',
-      githubUrl: 'https://github.com',
+      description: 'Real-time global COVID-19 tracker with country-wise statistics and data visualizations.',
+      technologies: ['React', 'Chart.js', 'REST API', 'CSS3'],
+      demoUrl: 'https://github.com/muhammad-arsalan-07',
+      githubUrl: 'https://github.com/muhammad-arsalan-07',
       aos: 'fade-right',
     },
     {
       title: 'Expense Tracker App',
       image: '/assets/expense.png',
-      demoUrl: 'https://github.com',
-      githubUrl: 'https://github.com',
+      description: 'Personal finance web app for tracking daily income, expenses, and total balance.',
+      technologies: ['React', 'Context API', 'JavaScript', 'CSS3'],
+      demoUrl: 'https://github.com/muhammad-arsalan-07',
+      githubUrl: 'https://github.com/muhammad-arsalan-07',
       aos: 'fade-left',
     },
     {
-      title: 'Shopping Card',
+      title: 'Shopping Cart App',
       image: '/assets/shopping.png',
-      demoUrl: 'https://github.com',
-      githubUrl: 'https://github.com',
+      description: 'Interactive e-commerce shopping cart interface with item management and real-time total.',
+      technologies: ['React', 'Redux', 'Node.js', 'Express'],
+      demoUrl: 'https://github.com/muhammad-arsalan-07',
+      githubUrl: 'https://github.com/muhammad-arsalan-07',
       aos: 'fade-right',
     },
   ];
@@ -36,38 +42,10 @@ export default function Projects() {
 
       <div className="projects_container container grid">
         {projectsList.map((project, index) => (
-          <div className="project_item" key={index} data-aos={project.aos}>
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={450}
-              height={250}
-              className="project_image"
-            />
-            <h3 className="project_heading">{project.title}</h3>
-            <div className="project_link">
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="button button_flex"
-              >
-                Visit Site
-                <i className="uil uil-globe project_icon"></i>
-              </a>
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="button button_flex"
-              >
-                View On Github
-                <i className="uil uil-github project_icon"></i>
-              </a>
-            </div>
-          </div>
+          <ProjectCard key={index} project={project} />
         ))}
       </div>
     </section>
   );
 }
+

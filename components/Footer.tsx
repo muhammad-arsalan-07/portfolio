@@ -29,7 +29,8 @@ export default function Footer() {
             href="https://www.facebook.com/arsalan.tanoli.712"
             className="footer_social_link"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label="Facebook Profile"
           >
             <i className="uil uil-facebook-f"></i>
           </a>
@@ -37,7 +38,8 @@ export default function Footer() {
             href="https://www.instagram.com"
             className="footer_social_link"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label="Instagram Profile"
           >
             <i className="uil uil-instagram"></i>
           </a>
@@ -45,14 +47,15 @@ export default function Footer() {
             href="https://www.twitter.com"
             className="footer_social_link"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            aria-label="Twitter Profile"
           >
             <i className="uil uil-twitter"></i>
           </a>
         </div>
 
         <span className="footer_copy">
-          &#169; Crypticalcoder. All rigths reserved
+          &#169; Crypticalcoder. All rights reserved
         </span>
       </div>
     </footer>

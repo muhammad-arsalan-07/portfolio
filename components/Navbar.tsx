@@ -16,7 +16,7 @@ export default function Navbar() {
       }
 
       const sections = document.querySelectorAll<HTMLElement>('section[id]');
-      const scrollY = window.pageYOffset;
+      const scrollY = window.scrollY;
 
       sections.forEach((current) => {
         const sectionHeight = current.offsetHeight;
@@ -39,7 +39,7 @@ export default function Navbar() {
     { href: '#skills', label: 'Skills', icon: 'uil-file-alt' },
     { href: '#resume', label: 'Resume', icon: 'uil-graduation-cap' },
     { href: '#projects', label: 'Projects', icon: 'uil-scenery' },
-    { href: '#contact', label: 'Contact', icon: 'uil-message' },
+    { href: '#contact', label: 'Contact', icon: 'uil-send' },
   ];
 
   return (
