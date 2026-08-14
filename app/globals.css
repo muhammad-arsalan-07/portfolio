@@ -61,6 +61,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body,
@@ -74,6 +75,7 @@ textarea {
 body {
   background-color: var(--body-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 h1,
@@ -277,6 +279,10 @@ img {
   max-width: 500px;
 }
 
+.home_data {
+  min-width: 0;
+}
+
 .home_img {
   margin-bottom: var(--mb-1);
   order: 1;
@@ -285,6 +291,7 @@ img {
 
 .home_profile_image_svg {
   width: 300px;
+  max-width: 100%;
   fill: #e5e7eb;
 }
 
@@ -333,6 +340,7 @@ img {
 
 .about_data {
   flex: 1;
+  min-width: 0;
 }
 
 .about_info {
@@ -388,6 +396,7 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1.25rem;
   padding: 2rem 4rem;
+  min-width: 0;
 }
 
 .skills_title {
@@ -804,6 +813,7 @@ img {
 .contact_container {
   column-gap: 6rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding-bottom: 3rem;
 }
@@ -1087,6 +1097,16 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  a,
+  button,
+  input,
+  textarea,
+  .nav_toggle,
+  .nav_close {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
   .header {
     top: 0;
     bottom: auto;
@@ -1135,10 +1155,14 @@ img {
   }
 
   .nav_close {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     right: 1.5rem;
     top: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--title-color);
@@ -1149,7 +1173,11 @@ img {
   }
 
   .nav_toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
     font-size: 1.25rem;
     cursor: pointer;
     color: var(--title-color);

@@ -33,6 +33,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = showMenu ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showMenu]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setShowMenu(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const navLinks = [
     { href: '#home', label: 'Home', icon: 'uil-estate' },
     { href: '#about', label: 'About', icon: 'uil-user' },
