@@ -6,9 +6,12 @@ import AOS from 'aos';
 export default function AosInit() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 800,
       once: false,
-      mirror: true,
+      mirror: false,
+      offset: 50,
+      debounceDelay: 50,
+      throttleDelay: 99,
     });
   }, []);
 

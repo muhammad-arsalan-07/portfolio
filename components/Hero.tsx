@@ -7,7 +7,6 @@ const typewriterRoles = [
   'Front-End Developer',
   'Back-End Developer',
   'Full Stack Developer',
-  'UI/UX Designer',
 ];
 
 export default function Hero() {
@@ -16,66 +15,41 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let pauseTimer: NodeJS.Timeout;
     const currentRole = typewriterRoles[roleIndex];
-    const typingSpeed = isDeleting ? 60 : 120;
+    let timer: NodeJS.Timeout;
 
-    const timer = setTimeout(() => {
-      if (!isDeleting) {
-        setText(currentRole.substring(0, text.length + 1));
-        if (text.length + 1 === currentRole.length) {
-          pauseTimer = setTimeout(() => setIsDeleting(true), 1500);
-        }
+    if (!isDeleting) {
+      if (text.length < currentRole.length) {
+        timer = setTimeout(() => {
+          setText(currentRole.substring(0, text.length + 1));
+        }, 90);
       } else {
-        setText(currentRole.substring(0, text.length - 1));
-        if (text.length - 1 === 0) {
+        // Pause when full word is typed
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, 1800);
+      }
+    } else {
+      if (text.length > 0) {
+        timer = setTimeout(() => {
+          setText(currentRole.substring(0, text.length - 1));
+        }, 45);
+      } else {
+        // Pause briefly at empty before switching to next word
+        timer = setTimeout(() => {
           setIsDeleting(false);
           setRoleIndex((prev) => (prev + 1) % typewriterRoles.length);
-        }
+        }, 300);
       }
-    }, typingSpeed);
+    }
 
-    return () => {
-      clearTimeout(timer);
-      if (pauseTimer) clearTimeout(pauseTimer);
-    };
+    return () => clearTimeout(timer);
   }, [text, isDeleting, roleIndex]);
 
   return (
     <section className="home section" id="home">
-      <div className="home_container container grid">
-        <div className="home_content grid">
-          {/* Socials */}
-          <div className="home_social" data-aos="fade-right">
-            <a
-              href="https://github.com/muhammad-arsalan-07"
-              className="home_social_icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub Profile"
-            >
-              <i className="uil uil-github-alt"></i>
-            </a>
-            <a
-              href="https://dribbble.com"
-              className="home_social_icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Dribbble Profile"
-            >
-              <i className="uil uil-dribbble"></i>
-            </a>
-            <a
-              href="https://linkedin.com"
-              className="home_social_icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn Profile"
-            >
-              <i className="uil uil-linkedin-alt"></i>
-            </a>
-          </div>
-
+      <div className="home_container container">
+        <div className="home_content">
           {/* Profile Image with Blob Mask */}
           <div className="home_img" data-aos="zoom-in-left">
             <svg
@@ -131,15 +105,6 @@ export default function Hero() {
               <i className="uil uil-github-alt button_icon"></i>
             </a>
           </div>
-        </div>
-
-        {/* Scroll Down */}
-        <div className="home_scroll">
-          <a href="#about" className="home_scroll_button button_flex">
-            <i className="uil uil-mouse-alt home_scroll_mouse"></i>
-            <span className="home_scroll_name">Scroll Down</span>
-            <i className="uil uil-arrow-down home_scroll_arrow"></i>
-          </a>
         </div>
       </div>
     </section>

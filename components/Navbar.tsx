@@ -33,27 +33,44 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = showMenu ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showMenu]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setShowMenu(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const navLinks = [
     { href: '#home', label: 'Home', icon: 'uil-estate' },
     { href: '#about', label: 'About', icon: 'uil-user' },
     { href: '#skills', label: 'Skills', icon: 'uil-file-alt' },
     { href: '#resume', label: 'Resume', icon: 'uil-graduation-cap' },
     { href: '#projects', label: 'Projects', icon: 'uil-scenery' },
-    { href: '#contact', label: 'Contact', icon: 'uil-send' },
+    { href: '#contact', label: 'Contact', icon: 'uil-message' },
   ];
 
   return (
     <header className={`header ${scrollHeader ? 'scroll_header' : ''}`}>
       <nav className="nav container">
-        <a href="#home" className="nav_logo" data-aos="fade-right">
+        <a
+          href="#home"
+          className={`nav_logo ${showMenu ? 'nav_logo_hidden' : ''}`}
+        >
           Muhammad Arsalan
         </a>
 
-        <div
-          className={`nav_menu ${showMenu ? 'show_menu' : ''}`}
-          data-aos="fade-left"
-        >
-          <ul className="nav_list grid">
+        <div className={`nav_menu ${showMenu ? 'show_menu' : ''}`}>
+          <ul className="nav_list">
             {navLinks.map((link) => (
               <li className="nav_item" key={link.href}>
                 <a
@@ -70,16 +87,26 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+        </div>
 
+        {/* Backdrop for mobile menu */}
+        <div
+          className={`nav_overlay ${showMenu ? 'show_overlay' : ''}`}
+          onClick={() => setShowMenu(false)}
+          aria-hidden={!showMenu}
+        />
+
+        <button
+          type="button"
+          className="nav_toggle"
+          onClick={() => setShowMenu(!showMenu)}
+          aria-label={showMenu ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={showMenu}
+        >
           <i
-            className="uil uil-times nav_close"
-            onClick={() => setShowMenu(false)}
+            className={`uil ${showMenu ? 'uil-times' : 'uil-apps'} nav_toggle_icon`}
           ></i>
-        </div>
-
-        <div className="nav_toggle" onClick={() => setShowMenu(!showMenu)}>
-          <i className="uil uil-apps"></i>
-        </div>
+        </button>
       </nav>
     </header>
   );

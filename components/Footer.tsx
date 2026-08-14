@@ -44,13 +44,13 @@ export default function Footer() {
             <i className="uil uil-instagram"></i>
           </a>
           <a
-            href="https://www.twitter.com"
+            href="https://www.linkedin.com"
             className="footer_social_link"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Twitter Profile"
+            aria-label="LinkedIn Profile"
           >
-            <i className="uil uil-twitter"></i>
+            <i className="uil uil-linkedin-alt"></i>
           </a>
         </div>
 

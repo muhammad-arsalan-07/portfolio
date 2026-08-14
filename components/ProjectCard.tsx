@@ -45,31 +45,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 </span>
               ))}
             </div>
-
-            <div className="project_card_links">
-              {project.demoUrl && (
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project_btn project_btn_primary"
-                >
-                  Visit Site
-                  <i className="uil uil-globe project_btn_icon"></i>
-                </a>
-              )}
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project_btn project_btn_secondary"
-                >
-                  Github
-                  <i className="uil uil-github-alt project_btn_icon"></i>
-                </a>
-              )}
-            </div>
           </div>
         </div>
       </div>
@@ -97,31 +72,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {tech}
               </span>
             ))}
-          </div>
-
-          <div className="project_mobile_links">
-            {project.demoUrl && (
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project_mobile_btn project_mobile_btn_primary"
-              >
-                Visit Site
-                <i className="uil uil-globe project_btn_icon"></i>
-              </a>
-            )}
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project_mobile_btn project_mobile_btn_secondary"
-              >
-                Github
-                <i className="uil uil-github-alt project_btn_icon"></i>
-              </a>
-            )}
           </div>
         </div>
       </div>
