@@ -271,7 +271,6 @@ img {
 }
 
 .home_subtitle {
-  color: var(--text-color);
   font-size: var(--h3-font-size);
   font-weight: var(--font-normal);
   margin-bottom: var(--mb-1);
