@@ -25,18 +25,18 @@ export default function Contact() {
         Get in touch
       </h2>
       <span className="section_subtitle" data-aos="zoom-in">
-        Contact Me
+        Let’s Work Together
       </span>
 
       <div className="contact_container container grid">
-        {/* Left Side: Talk to me */}
+        {/* Left Side: Contact Me */}
         <div className="contact_content">
           <h3
             className="contact_title"
             data-aos="fade-right"
             data-aos-delay="0"
           >
-            Talk to me
+            Contact Me
           </h3>
 
           <div className="contact_info">
@@ -51,12 +51,12 @@ export default function Contact() {
                 muhammadarsalan7531@gmail.com
               </span>
               <a
-                href="mailto:muhammadarsalan7531@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadarsalan7531@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact_button"
               >
-                Write me
+                Email me
                 <i className="uil uil-arrow-right contact_button_icon"></i>
               </a>
             </div>
@@ -75,7 +75,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="contact_button"
               >
-                Write me
+                Message
                 <i className="uil uil-arrow-right contact_button_icon"></i>
               </a>
             </div>
@@ -85,30 +85,30 @@ export default function Contact() {
               data-aos="fade-up"
               data-aos-delay="700"
             >
-              <i className="uil uil-facebook-messenger contact_card_icon"></i>
-              <h3 className="contact_card_title">Messenger</h3>
-              <span className="contact_card_data">arsalan.tanoli.712</span>
+              <i className="uil uil-linkedin-alt contact_card_icon"></i>
+              <h3 className="contact_card_title">LinkedIn</h3>
+              <span className="contact_card_data">Muhammad Arsalan</span>
               <a
-                href="https://m.me/arsalan.tanoli.712"
+                href="https://www.linkedin.com/in/muhammad-arsalan-71a673265"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact_button"
               >
-                Write me
+                Connect
                 <i className="uil uil-arrow-right contact_button_icon"></i>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Right Side: Write me your project */}
+        {/* Right Side: Tell me about your project */}
         <div className="contact_content">
           <h3
             className="contact_title"
             data-aos="fade-left"
             data-aos-delay="0"
           >
-            Write me your project
+            Tell me about your project
           </h3>
 
           <form onSubmit={handleSubmit} className="contact_form">
@@ -122,7 +122,7 @@ export default function Contact() {
                 type="text"
                 name="name"
                 className="contact_form_input"
-                placeholder="Insert your name"
+                placeholder="Enter your name"
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
@@ -141,7 +141,7 @@ export default function Contact() {
                 type="email"
                 name="email"
                 className="contact_form_input"
-                placeholder="Insert your email"
+                placeholder="Enter your email"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
@@ -161,7 +161,7 @@ export default function Contact() {
                 cols={30}
                 rows={10}
                 className="contact_form_input"
-                placeholder="Write your project"
+                placeholder="Tell me about your project"
                 value={formData.project}
                 onChange={(e) =>
                   setFormData({ ...formData, project: e.target.value })

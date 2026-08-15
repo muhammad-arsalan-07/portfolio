@@ -7,7 +7,7 @@ export default function About() {
         About Me
       </h2>
       <span className="section_subtitle" data-aos="zoom-in">
-        My introduction
+        My Introduction
       </span>
 
       <div className="about_container container">
@@ -29,7 +29,7 @@ export default function About() {
             >
               <i className="uil uil-award about_icon"></i>
               <h3 className="about_title">Experience</h3>
-              <span className="about_subtitle">2+ years</span>
+              <span className="about_subtitle">4+ years</span>
             </div>
 
             <div
@@ -39,7 +39,7 @@ export default function About() {
             >
               <i className="uil uil-suitcase-alt about_icon"></i>
               <h3 className="about_title">Completed</h3>
-              <span className="about_subtitle">20+ projects</span>
+              <span className="about_subtitle">10+ projects</span>
             </div>
 
             <div
@@ -54,7 +54,7 @@ export default function About() {
           </div>
 
           <p className="about_description" data-aos="fade-up">
-            I am Muhammad Arsalan, web developer from Pakistan and currently studying in Virtual University. I have experience as full-stack developer and ability to work independently and as part of a team, and comfortable with agile development methods.
+            I’m Muhammad Arsalan, a Full-Stack Developer focused on building scalable and user-friendly web applications. I specialize in Next.js, Nest.js, and modern JavaScript technologies, with experience developing responsive interfaces and efficient backend solutions. I enjoy solving complex problems, writing clean and maintainable code, and collaborating with teams to turn ideas into reliable digital products.
           </p>
 
           <a

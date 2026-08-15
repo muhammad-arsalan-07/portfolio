@@ -1,19 +1,8 @@
 export default function Skills() {
-  const frontendSkills = [
-    { name: 'HTML', level: 'Advanced' },
-    { name: 'CSS', level: 'Intermediate' },
-    { name: 'JavaScript', level: 'Intermediate' },
-    { name: 'Bootstrap', level: 'Intermediate' },
-    { name: 'Git', level: 'Intermediate' },
-    { name: 'React', level: 'Intermediate' },
-  ];
-
-  const backendSkills = [
-    { name: 'Firebase', level: 'Intermediate' },
-    { name: 'Node Js', level: 'Basic' },
-    { name: 'Express Js', level: 'Basic' },
-    { name: 'Mongo DB', level: 'Basic' },
-  ];
+  const frontendSkills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React.js', 'Next.js'];
+  const backendSkills = ['Node.js', 'Nest.js', 'Express.js'];
+  const databaseSkills = ['MongoDB', 'PostgreSQL', 'Firebase'];
+  const toolsAndTechnologiesSkills = ['Git', 'GitHub', 'Jira', 'Bitbucket'];
 
   return (
     <section className="skills section" id="skills">
@@ -21,49 +10,81 @@ export default function Skills() {
         Skills
       </h2>
       <span className="section_subtitle" data-aos="zoom-in">
-        My technical level
+        Technologies I Work With
       </span>
 
       <div className="skills_container container grid">
-        {/* Frontend Developer Card */}
+        {/* Frontend Development Card */}
         <div className="skills_content" data-aos="fade-right">
-          <h3 className="skills_title">Frontend Developer</h3>
+          <h3 className="skills_title">Frontend Development</h3>
 
           <div className="skills_box">
             {frontendSkills.map((skill) => (
               <div
                 className="skills_data"
-                key={skill.name}
+                key={skill}
                 data-aos="fade-right"
                 data-aos-delay="300"
               >
                 <i className="uil uil-check-circle skills_icon"></i>
-                <div>
-                  <h3 className="skills_name">{skill.name}</h3>
-                  <span className="skills_level">{skill.level}</span>
-                </div>
+                <h3 className="skills_name">{skill}</h3>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Backend Developer Card */}
+        {/* Backend Development Card */}
         <div className="skills_content" data-aos="fade-left">
-          <h3 className="skills_title">Backend Developer</h3>
+          <h3 className="skills_title">Backend Development</h3>
 
           <div className="skills_box">
             {backendSkills.map((skill) => (
               <div
                 className="skills_data"
-                key={skill.name}
+                key={skill}
                 data-aos="fade-left"
                 data-aos-delay="300"
               >
                 <i className="uil uil-check-circle skills_icon"></i>
-                <div>
-                  <h3 className="skills_name">{skill.name}</h3>
-                  <span className="skills_level">{skill.level}</span>
-                </div>
+                <h3 className="skills_name">{skill}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Database Card */}
+        <div className="skills_content" data-aos="fade-right">
+          <h3 className="skills_title">Databases</h3>
+
+          <div className="skills_box">
+            {databaseSkills.map((skill) => (
+              <div
+                className="skills_data"
+                key={skill}
+                data-aos="fade-right"
+                data-aos-delay="300"
+              >
+                <i className="uil uil-check-circle skills_icon"></i>
+                <h3 className="skills_name">{skill}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tools and Technologies Card */}
+        <div className="skills_content" data-aos="fade-left">
+          <h3 className="skills_title">Tools & Technologies</h3>
+
+          <div className="skills_box">
+            {toolsAndTechnologiesSkills.map((skill) => (
+              <div
+                className="skills_data"
+                key={skill}
+                data-aos="fade-left"
+                data-aos-delay="300"
+              >
+                <i className="uil uil-check-circle skills_icon"></i>
+                <h3 className="skills_name">{skill}</h3>
               </div>
             ))}
           </div>

@@ -1,9 +1,9 @@
 export default function Resume() {
   const educationData = [
     {
-      title: 'Bachelor In Computer Science',
-      institution: 'Virtual University - Karachi',
-      date: '2022 - Present',
+      title: "Bachelor's in Computer Science",
+      institution: 'Federal Urdu University - Karachi',
+      date: '2023 – Present',
     },
     {
       title: 'Intermediate',
@@ -17,11 +17,16 @@ export default function Resume() {
     },
   ];
 
-  const workData = [
+  const workExperienceData = [
+    {
+      title: 'Associate Software Engineer',
+      institution: 'Mythod — Jeddah, KSA · Remote',
+      date: 'May 2023 – Present',
+    },
     {
       title: 'React JS Developer',
-      institution: 'BSS - Karachi',
-      date: '2022 - Present',
+      institution: 'Business Solutions and Services — Karachi',
+      date: 'March 2022 – April 2023',
     },
   ];
 
@@ -31,7 +36,7 @@ export default function Resume() {
         Resume
       </h2>
       <span className="section_subtitle" data-aos="zoom-in">
-        My personal journey
+        My Professional Journey
       </span>
 
       <div className="resume_container container grid">
@@ -64,11 +69,11 @@ export default function Resume() {
           </div>
         </div>
 
-        {/* Work Column */}
+        {/* Work Experience Column */}
         <div data-aos="fade-left">
           <h3 className="resume_heading">
             <i className="uil uil-briefcase-alt resume_icon"></i>
-            Work
+            Work Experience
           </h3>
 
           <div
@@ -77,7 +82,7 @@ export default function Resume() {
             data-aos-delay="600"
           >
             <div>
-              {workData.map((item, index) => (
+              {workExperienceData.map((item, index) => (
                 <div className="education_container" key={index}>
                   <span className="resume_rounded"></span>
                   <span className="resume_line"></span>

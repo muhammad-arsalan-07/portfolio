@@ -91,7 +91,11 @@ export default function Hero() {
               <span className="animate-pulse">|</span>
             </h3>
             <p className="home_description" data-aos="zoom-in">
-              Full-stack developer with experience in developing and managing web applications. Strong knowledge of React, Node Js, and Express Js. Experienced in creating unit and end-to-end tests.
+              {/* Full-Stack Developer specializing in Next.js and Nest.js, focused on building scalable web applications and seamless user experiences. I create clean, maintainable solutions that turn complex requirements into reliable digital products. */}
+              Full-Stack Developer specializing in Next.js and Nest.js, building scalable web applications and seamless digital experiences. I turn complex ideas into clean, maintainable, and reliable solutions.
+
+              {/* Full-Stack Developer experienced in building scalable and responsive web applications using React.js, Next.js, Node.js, Express.js, Nest.js, and MongoDB. Passionate about creating clean, user-focused interfaces and efficient backend solutions. */}
+              {/* Full-stack developer with experience in developing and managing web applications. Strong knowledge of React, Node Js, and Express Js. Experienced in creating unit and end-to-end tests. */}
             </p>
 
             <a
