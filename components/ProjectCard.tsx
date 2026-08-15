@@ -7,8 +7,6 @@ export interface ProjectItem {
   image: string;
   description: string;
   technologies: string[];
-  demoUrl: string;
-  githubUrl: string;
   aos?: string;
 }
 

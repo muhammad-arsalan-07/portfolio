@@ -58,8 +58,8 @@ export default function About() {
           </p>
 
           <a
-            download=""
-            href="/assets/John-Cv.pdf"
+            download="Muhammad_Arsalan.pdf"
+            href="/assets/arsalan-cv.pdf"
             className="button button_flex"
             target="_blank"
             rel="noopener noreferrer"

@@ -69,7 +69,7 @@ export default function Hero() {
                   className="home_profile_image"
                   x="12"
                   y="18"
-                  href="/assets/perfil.png"
+                  href="/assets/profile.png"
                   width="180"
                   height="180"
                 />
