@@ -3,24 +3,10 @@ import ProjectCard, { ProjectItem } from './ProjectCard';
 export default function Projects() {
   const projectsList: ProjectItem[] = [
     {
-      title: 'Create Smart',
-      image: '/assets/create-smart.jpg',
-      description: 'A platform for creating and editing presentations and email templates, allowing users to customize their content and export completed designs as HTML.',
-      technologies: ['JavaScript', 'TypeScript', 'React.js', 'Redux.js'],
-      aos: 'fade-right',
-    },
-    {
-      title: 'MBFX',
-      image: '/assets/mbfx.jpg',
-      description: 'Designed and developed the user interface for a modern trading platform, focusing on a clean, responsive layout and an engaging user experience.',
-      technologies: ['HTML', 'CSS'],
-      aos: 'fade-left',
-    },
-    {
-      title: 'Banaha',
-      image: '/assets/banaha.jpg',
-      description: 'A platform for managing home-building projects, connecting clients with engineers and contractors. Users can create professional profiles, explore available experts, create construction projects, and assign engineers or contractors to manage their building process.',
-      technologies: ['Nest.js', 'MongoDB', 'Docker'],
+      title: 'Qntar',
+      image: '/assets/qntar.jpg',
+      description: 'A financial management platform that connects users with their bank accounts to fetch and organize transaction history. The platform provides tools for managing budgets and financial goals, while offering detailed reports to analyze cash flow, income, spending, and overall financial performance.',
+      technologies: ['Next.js', 'Nest.js', 'PostgreSQL', 'Novu', 'BullMQ'],
       aos: 'fade-right',
     },
     {
@@ -31,11 +17,25 @@ export default function Projects() {
       aos: 'fade-left',
     },
     {
-      title: 'Qntar',
-      image: '/assets/qntar.jpg',
-      description: 'A financial management platform that connects users with their bank accounts to fetch and organize transaction history. The platform provides tools for managing budgets and financial goals, while offering detailed reports to analyze cash flow, income, spending, and overall financial performance.',
-      technologies: ['Next.js', 'Nest.js', 'PostgreSQL', 'Novu', 'BullMQ'],
+      title: 'Banaha',
+      image: '/assets/banaha.jpg',
+      description: 'A platform for managing home-building projects, connecting clients with engineers and contractors. Users can create professional profiles, explore available experts, create construction projects, and assign engineers or contractors to manage their building process.',
+      technologies: ['Nest.js', 'MongoDB', 'Docker'],
+      aos: 'fade-right',
+    },
+    {
+      title: 'MBFX',
+      image: '/assets/mbfx.jpg',
+      description: 'Designed and developed the user interface for a modern trading platform, focusing on a clean, responsive layout and an engaging user experience.',
+      technologies: ['HTML', 'CSS'],
       aos: 'fade-left',
+    },
+    {
+      title: 'Create Smart',
+      image: '/assets/create-smart.jpg',
+      description: 'A platform for creating and editing presentations and email templates, allowing users to customize their content and export completed designs as HTML.',
+      technologies: ['JavaScript', 'TypeScript', 'React.js', 'Redux.js'],
+      aos: 'fade-right',
     },
   ];
 
