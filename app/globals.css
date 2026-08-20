@@ -602,10 +602,6 @@ img {
   font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 1.15rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -672,10 +668,6 @@ img {
   font-size: 0.85rem;
   line-height: 1.45;
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .project_mobile_tech_list {
@@ -1231,9 +1223,12 @@ img {
   }
 
   .about_img {
-    width: 240px;
+    width: 220px;
     margin: 0 auto;
     border-radius: 1.5rem;
+    height: 220px;
+    object-fit: cover;
+    object-position: top;
   }
 
   .about_data {
