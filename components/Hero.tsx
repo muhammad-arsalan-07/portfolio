@@ -81,7 +81,7 @@ export default function Hero() {
           <div className="home_data">
             <h1 className="home_title" data-aos="zoom-in-right">
               <span className="home_intro_text">
-                <span className="home_hand">👋</span> Hello I&apos;am
+                <span className="home_hand">👋</span> Hello I&apos;m
               </span>
               <br />
               Muhammad Arsalan
